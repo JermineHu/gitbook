@@ -1,0 +1,49 @@
+{
+    "title": "publication GitBook",
+    "author": "Jermine Hu",
+    "plugins": [
+        "ga",
+        "sitemap",
+        "atoc",
+        "include",
+        "gist",
+        "include-codeblock",
+        "-lunr", "-search", "search-plus",
+        "hints",
+        "livereload",
+        "ace",
+        "redirect"
+    ],
+    "pluginsConfig": {
+        "ga": {
+            "token": "UA-11111111-22",
+            "configuration": "auto"
+        },
+        "sitemap": {
+            "hostname": "https://jermine.vdo.pub/"
+        },
+        "include-codeblock": {
+            "check": false,
+            "edit": false,
+            "lang": "bash",
+            "fixlang": true,
+            "template": "default",
+            "theme": "chrome",
+            "unindent": false
+        }
+    },
+    "pdf": {
+        "margin": {
+            "left": 56,
+            "right": 56,
+            "top": 56,
+            "bottom": 56
+        },
+        "pageNumbers": true,
+        "fontSize": 11,
+        "fontFamily": "Roboto",
+        "paperSize": "a4",
+        "headerTemplate": "_TITLE_ - _SECTION_",
+        "footerTemplate": "_AUTHOR_ - _PAGENUM_"
+    }
+}
