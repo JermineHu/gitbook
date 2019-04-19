@@ -4,21 +4,52 @@ A docker image for gitbook to build ebook（pdf、epub、mobi、html）
 
 ## Ebooks publish
 
+### Long-term use
+
 ```
 
-# start a gitgook container
+# to start a gitgook container
 docker run --name gitbook --restart=always -itd -v `pwd`:/book -w /book  jermine/gitbook 
 
-# build pdf
+# to build pdf
 
-gitbook pdf . $FILE_NAME.pdf
+docker exec -it gitbook gitbook pdf . $FILE_NAME.pdf
 
-# build epub
+# to build epub
 
-gitbook epub . $FILE_NAME.epub
+docker exec -it gitbook gitbook epub . $FILE_NAME.epub
 
-# build mobi
+# to build mobi
 
-gitbook mobi . $FILE_NAME.mobi
+docker exec -it gitbook gitbook mobi . $FILE_NAME.mobi
+
+```
+
+### One-time use
+
+#### Set alias to make command simplified
+
+```
+alias gb="docker run --rm -it -v `pwd`:/book -w /book jermine/gitbook gitbook"
+
+```
+#### commands usage
+
+```
+# to start a gitgook container and install gitbook plugins
+gb install
+
+# to build pdf
+
+gb pdf . $FILE_NAME.pdf
+
+# to build epub
+
+gb epub . $FILE_NAME.epub
+
+# to build mobi
+
+gb mobi . $FILE_NAME.mobi
+
 
 ```
