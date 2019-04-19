@@ -27,12 +27,16 @@ docker exec -it gitbook gitbook mobi . $FILE_NAME.mobi
 
 ### One-time use
 
-#### Set alias to make command simplified
+#### Set function or alias to make command simplified
 
 ```
-alias gb="docker run --rm -it -v `pwd`:/book -w /book jermine/gitbook gitbook"
+# the function way
+function gb(){ docker run --rm -it -v `pwd`:/book -w /book jermine/gitbook gitbook "$@" }
 
+# the alias way (must be with '' to wrap command,the "" wrap is a static command)
+alias gb='docker run --rm -it -v `pwd`:/book -w /book jermine/gitbook gitbook'
 ```
+
 #### commands usage
 
 ```
